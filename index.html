@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styless.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <title>Editor de Memes</title>
+</head>
+<body>
+    <header class="header-container">
+        <h1 class="title">Generador de Memes</h1>
+        <div class="btn-container">
+            <button class="btn">Imagen</a>
+            <button class="btn">Texto</a>
+            <button id="lightMode" class="btn">Modo Oscuro</button>
+        </div>
+    </header>
+    
+    <div class="canva-container">
+        <main class="editor-container">
+            <p class="canva-editor">TOP TEXT</p>
+            <div src alt id="img-meme" class="img-meme"></div>
+            <p class="canva-editor">BOTTOM TEXT</p>
+            <button type="button" class="btn-download">Descargar Meme</button>
+        </main>
+    </div>
+    <aside id="section-image" class="filter-image">
+        <h2 class="title-sections">IMAGEN</h2>
+        <div class="url">
+            <h5>URL</h5>
+            <input type="text" value="" id="imageName"/>
+            <input type="button" id="insert-btn" value="Insertar" />
+        </div>
+        <div class="section-background">
+                <div class="background">
+                    <h5>FONDO</h5>
+                    <input type="color" value="#e693ff">
+                </div>
+                <div class="row form-group desplegable">                        
+                        <label class="col-12 pl-0"></label>
+                        <select class="form-control col-12">
+                            <option value="ACTIVE">Ninguno</option>
+                            <option value="INACTIVE">Aclarar</option>
+                            <option value="ACTIVE">Oscurecer</option>
+                            <option value="INACTIVE">Diferencia</option>
+                            <option value="ACTIVE">Luminosidad</option>
+                            <option value="INACTIVE">Multiplicar</option>
+                        </select>                                
+                </div>           
+        </div>    
+        
+                <div class="filters">
+                    <h5>FILTROS</h5>
+                    <div class="filter-option">
+                        <label for="brightness-slider" class="name-filter"> BRILLO</label>
+                        <input class="input-slider algo" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+
+                    <div class="filter-option"> 
+                        <label  for="opacity-slider" class="name-filter">OPACIDAD</label>
+                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+
+                    <div class="filter-option">
+                        <label for="contrast-slider" class="name-filter"> CONTRASTE</label>
+                        <input class="input-slider" type ="range" min="100%" max="1000%" value="100%" step="1%"></input>
+                    </div>
+
+                    <div class="filter-option">
+                        <label for="blur-slider" class="name-filter"> DESENFOQUE</label>
+                        <input class="input-slider" type ="range" min="0px" max="10px" value="0px" step="0.1px"></input>
+                    </div>
+
+                    <div class="filter-option">
+                        <label class="name-filter"> ESCALA DE GRISES</label>
+                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+
+                    <div class="filter-option">
+                        <label class="name-filter"> SEPIA </label>
+                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+
+                    <div class="filter-option">
+                        <label class="name-filter"> HUE </label>
+                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+
+                    <div class="filter-option">
+                        <label class="name-filter"> SATURADO </label>
+                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+
+                    <div class="filter-option">
+                          <label for="opacity-slider" class="name-filter"> NEGATIVO </label>
+                         <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+                 </div> 
+            
+       
+            <button class="btn"> Restablecer Filtros</button>
+        </div>
+    </aside>
+
+    <script src="./script.js"></script>
+</body>
+</html>
