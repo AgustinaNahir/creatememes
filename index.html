@@ -14,8 +14,8 @@
     <header class="header-container">
         <h1 class="title">Generador de Memes</h1>
         <div class="btn-container">
-            <button class="btn">Imagen</a>
-            <button class="btn">Texto</a>
+            <button class="btn" style='cursor: pointer;' id="btn-image">Imagen</a>
+            <button class="btn" style='cursor: pointer;' id="btn-text">Texto</a>
             <button id="lightMode" class="btn">Modo Oscuro</button>
         </div>
     </header>
@@ -23,17 +23,16 @@
     <div class="canva-container">
         <main class="editor-container">
             <p class="canva-editor">TOP TEXT</p>
-            <div src alt id="img-meme" class="img-meme"></div>
+            <div class="img-meme" id="img-meme"></div>
             <p class="canva-editor">BOTTOM TEXT</p>
             <button type="button" class="btn-download">Descargar Meme</button>
         </main>
     </div>
-    <aside id="section-image" class="filter-image">
+    <aside id="section-image" class="aside-filter">
         <h2 class="title-sections">IMAGEN</h2>
-        <div class="url">
+        <div>
             <h5>URL</h5>
-            <input type="text" value="" id="imageName"/>
-            <input type="button" id="insert-btn" value="Insertar" />
+            <input type="text" id="inputUrl"/>
         </div>
         <div class="section-background">
                 <div class="background">
@@ -103,6 +102,78 @@
             
        
             <button class="btn"> Restablecer Filtros</button>
+        </div>
+    </aside>
+    <aside id="section-text" class="aside-filter">
+        <h2 class="title-sections">TEXTO</h2>
+        <div>
+            <h5> SUPERIOR</h5>
+            <input id="inputText" class="input-slider" type="text">
+            <p id="renderText"></p>
+        </div>
+
+        <div>
+            <h5>INFERIOR</h5>
+           <input id="inputBotton" class="input-slider" type="text">
+           <p id="bottonText"></p>
+        </div>
+
+        <div>
+            <h5>FUENTE</h5>
+            <div class="row form-group">                        
+                <label class="col-12 pl-0"></label>
+                <select class="form-control col-12">
+                    <option value="ACTIVE">Arial</option>
+                    <option value="INACTIVE">Arial Black</option>
+                    <option value="ACTIVE">American Typewriter</option>
+                    <option value="INACTIVE">Andale Mono</option>
+                    <option value="ACTIVE">Comic Sans MS</option>
+                    <option value="INACTIVE">Helvetica</option>
+                    <option value="INACTIVE">Impact</option>
+                    <option value="ACTIVE">Verdana</option>
+                    <option value="INACTIVE">Times New Roman</option>
+                </select>                                
+            </div>  
+        </div>
+
+        <div class="color-text">
+            <div class="incolor">
+            <h5 class="tittle-items">COLOR</h5>
+            <div class="btn-color">
+            <input type="color" id="incolor" value="#000000" aria-label="color de texto">
+        </div>
+      
+            <h5>FONDO</h5>
+            <input type="color" value="#FFFFFF">
+            <input type="checkbox">Fondo Transparente</input>
+        
+
+        <div>
+            <h5>CONTORNO</h5>
+            <button class="button-outline">Ninguno</button>
+            <button class="button-outline">Claro</button>
+            <button class="button-outline">Oscuro</button>
+        </div>
+
+        
+        <div>
+            <h5>ESPACIADO</h5>
+        <input class="space" type="number" value="35">
+        </div>
+
+        <div>
+            <h5>INTERLINEADO</h5>
+            <div class="row form-group">                        
+                <label  class="col-12 pl-0 "></label>
+                <select class="form-control col-12 space">
+                    <option value="ACTIVE">0.8</option>
+                    <option value="INACTIVE">1</option>
+                    <option value="ACTIVE">1.2</option>
+                    <option value="INACTIVE">1.5</option>
+                    <option value="ACTIVE">2</option>
+                    <option value="INACTIVE">2.5</option>
+                </select>                                
+            </div>  
         </div>
     </aside>
 
