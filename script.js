@@ -1,6 +1,8 @@
 const body = document.body;
 const btnTheme = document.getElementById("lightMode");
 
+/* Dark mode*/
+
 btnTheme.addEventListener("click", () => {
   body.classList.toggle('light-theme');
   let modoOscuro = body.classList.contains('light-theme')
@@ -37,7 +39,7 @@ inputText.addEventListener('input', (event) => {
   renderText.innerHTML= textoIngresado
 })
 
-const inputBotton=document.getElementById("inputBotton");
+const inputBotton = document.getElementById("inputBotton");
 const bottonText = document.getElementById('bottonText');
 
 inputBotton.addEventListener('input', (Event) => {
@@ -54,3 +56,15 @@ url.addEventListener ("input", (event)=>{
 imageContainer.style.backgroundImage = `url("${event.target.value}")`;
   
 })
+
+/* Download button*/
+
+const btnDownload = document.getElementById("btn-download");
+
+const downloadMeme = () => {
+  domtoimage.toBlob($('.pruebaDsc')).then(function(blob){
+    saveAs(blob, "meme.png");
+  });
+};
+
+btnDownload.addEventListener("click", downloadMeme);
