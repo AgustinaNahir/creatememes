@@ -8,6 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+    crossorigin="anonymous"></script>
     <title>Editor de Memes</title>
 </head>
 <body>
@@ -25,7 +31,7 @@
             <p class="canva-editor">TOP TEXT</p>
             <div class="img-meme" id="img-meme"></div>
             <p class="canva-editor">BOTTOM TEXT</p>
-            <button type="button" class="btn-download">Descargar Meme</button>
+            <button id="btn-download" type="button" class="btn-download">Descargar Meme</button>
         </main>
     </div>
     <aside id="section-image" class="aside-filter">
