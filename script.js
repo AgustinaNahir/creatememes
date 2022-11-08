@@ -56,15 +56,15 @@ url.addEventListener ("input", (event)=>{
 imageContainer.style.backgroundImage = `url("${event.target.value}")`;
   
 })
-
-/* Download button*/
-
-const btnDownload = document.getElementById("btn-download");
+/* Boton descarga, no funciona todavia */
+const $ = (selector) => document.querySelector(selector)
+let btnDownload = $("#btnDownload");
 
 const downloadMeme = () => {
-  domtoimage.toBlob($('.pruebaDsc')).then(function(blob){
-    saveAs(blob, "meme.png");
+  domtoimage.toBlob($('.editor-container')).then(function (blob) {
+    saveAs(blob, 'mi-meme.jpg');
   });
+
 };
 
 btnDownload.addEventListener("click", downloadMeme);

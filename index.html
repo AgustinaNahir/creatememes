@@ -8,12 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
-    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Editor de Memes</title>
 </head>
 <body>
@@ -31,20 +27,20 @@
             <p class="canva-editor">TOP TEXT</p>
             <div class="img-meme" id="img-meme"></div>
             <p class="canva-editor">BOTTOM TEXT</p>
-            <button id="btn-download" type="button" class="btn-download">Descargar Meme</button>
+            <div class="download"><button id="btnDownload" type="button" class="btn-download">Descargar Meme</button></div>
         </main>
     </div>
     <aside id="section-image" class="aside-filter">
         <h2 class="title-sections">IMAGEN</h2>
         <div>
-            <h5>URL</h5>
+            <h5 class="sub-titles">URL</h5>
             <input type="text" id="inputUrl"/>
         </div>
-        <div class="section-background">
-                <div class="background">
-                    <h5>FONDO</h5>
-                    <input type="color" value="#e693ff">
-                </div>
+        <div>
+            <div>
+                 <h5 class="sub-titles">FONDO</h5>
+                <input type="color" value="#e693ff">
+            </div>
                 <div class="row form-group desplegable">                        
                         <label class="col-12 pl-0"></label>
                         <select class="form-control col-12">
@@ -59,7 +55,7 @@
         </div>    
         
                 <div class="filters">
-                    <h5>FILTROS</h5>
+                    <h5 class="sub-titles">FILTROS</h5>
                     <div class="filter-option">
                         <label for="brightness-slider" class="name-filter"> BRILLO</label>
                         <input class="input-slider algo" type ="range" min="0" max="1" value="1" step="0.1"></input>
@@ -101,7 +97,7 @@
                     </div>
 
                     <div class="filter-option">
-                          <label for="opacity-slider" class="name-filter"> NEGATIVO </label>
+                          <label for="opacity-slider" class="name-filter">NEGATIVO</label>
                          <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
                  </div> 
@@ -113,19 +109,19 @@
     <aside id="section-text" class="aside-filter">
         <h2 class="title-sections">TEXTO</h2>
         <div>
-            <h5> SUPERIOR</h5>
+            <h5 class="sub-titles">SUPERIOR</h5>
             <input id="inputText" class="input-slider" type="text">
             <p id="renderText"></p>
         </div>
 
         <div>
-            <h5>INFERIOR</h5>
+            <h5 class="sub-titles">INFERIOR</h5>
            <input id="inputBotton" class="input-slider" type="text">
            <p id="bottonText"></p>
         </div>
 
         <div>
-            <h5>FUENTE</h5>
+            <h5 class="sub-titles">FUENTE</h5>
             <div class="row form-group">                        
                 <label class="col-12 pl-0"></label>
                 <select class="form-control col-12">
@@ -142,33 +138,33 @@
             </div>  
         </div>
 
-        <div class="color-text">
+        <div>
             <div class="incolor">
-            <h5 class="tittle-items">COLOR</h5>
+            <h5 class="sub-titles">COLOR</h5>
             <div class="btn-color">
             <input type="color" id="incolor" value="#000000" aria-label="color de texto">
         </div>
       
-            <h5>FONDO</h5>
+            <h5 class="sub-titles">FONDO</h5>
             <input type="color" value="#FFFFFF">
             <input type="checkbox">Fondo Transparente</input>
         
 
         <div>
-            <h5>CONTORNO</h5>
-            <button class="button-outline">Ninguno</button>
-            <button class="button-outline">Claro</button>
-            <button class="button-outline">Oscuro</button>
+            <h5 class="sub-titles">CONTORNO</h5>
+            <button class="btn">Ninguno</button>
+            <button class="btn">Claro</button>
+            <button class="btn">Oscuro</button>
         </div>
 
         
         <div>
-            <h5>ESPACIADO</h5>
+            <h5 class="sub-titles">ESPACIADO</h5>
         <input class="space" type="number" value="35">
         </div>
 
         <div>
-            <h5>INTERLINEADO</h5>
+            <h5 class="sub-titles">INTERLINEADO</h5>
             <div class="row form-group">                        
                 <label  class="col-12 pl-0 "></label>
                 <select class="form-control col-12 space">
