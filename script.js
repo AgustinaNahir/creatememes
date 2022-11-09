@@ -14,6 +14,8 @@ btnTheme.addEventListener("click", () => {
   }
 });
 
+/* Botones de Imagen / Texto aside*/
+
 let btnImage = document.getElementById("btn-image");
 let btnTxt = document.getElementById("btn-text");
 let asideImage = document.getElementById("section-image");
@@ -29,34 +31,30 @@ btnImage.addEventListener("click", (event)=>{
   asideImage.classList.remove("display-none");
 })
 
-
-const inputText = document.getElementById('inputText');
-const renderText = document.getElementById('renderText');
-
+/* input textos */
+let topText = document.getElementById('top-text');
+let bottomText = document.getElementById('bottom-text');
+let inputText = document.getElementById('input-text');
+let inputBottom = document.getElementById('input-bottom');
 
 inputText.addEventListener('input', (event) => {
-  const textoIngresado = event.target.value;
-  renderText.innerHTML= textoIngresado
-})
+  topText.innerText = event.target.value;
+});
 
-const inputBotton = document.getElementById("inputBotton");
-const bottonText = document.getElementById('bottonText');
+inputBottom.addEventListener('input', (event) => {
+  bottomText.innerText = event.target.value;
+});
 
-inputBotton.addEventListener('input', (Event) => {
-  const textoIngresadoB = Event.target.value;
-  bottonText.innerHTML = textoIngresadoB ;
-  
-})
 
+/* input link de imagen*/
 let url = document.getElementById("inputUrl");
 let imageContainer = document.getElementById("img-meme");
-
 
 url.addEventListener ("input", (event)=>{
 imageContainer.style.backgroundImage = `url("${event.target.value}")`;
   
 })
-/* Boton descarga, no funciona todavia */
+/* Boton descarga */
 const $ = (selector) => document.querySelector(selector)
 let btnDownload = $("#btnDownload");
 

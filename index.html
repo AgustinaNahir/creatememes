@@ -24,10 +24,9 @@
     
     <div class="canva-container">
         <main class="editor-container">
-            <p class="canva-editor">TOP TEXT</p>
+            <div class="text-container"><p class="canva-editor" id="top-text">TOP TEXT</p></div>
             <div class="img-meme" id="img-meme"></div>
-            <p class="canva-editor">BOTTOM TEXT</p>
-            <div class="download"><button id="btnDownload" type="button" class="btn-download">Descargar Meme</button></div>
+            <div class="text-container"><p class="canva-editor" id="bottom-text">BOTTOM TEXT</p></div>
         </main>
     </div>
     <aside id="section-image" class="aside-filter">
@@ -82,18 +81,18 @@
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> SEPIA </label>
+                        <label class="name-filter">SEPIA</label>
                         <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> HUE </label>
+                        <label>HUE</label>
                         <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> SATURADO </label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label>SATURADO </label>
+                        <input type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
@@ -101,23 +100,19 @@
                          <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
                  </div> 
-            
-       
-            <button class="btn"> Restablecer Filtros</button>
         </div>
+        <button class="btn"> Restablecer Filtros</button>
+        <button id="btnDownload" type="button" class="btn-download">Descargar Meme</button>
     </aside>
     <aside id="section-text" class="aside-filter">
         <h2 class="title-sections">TEXTO</h2>
         <div>
             <h5 class="sub-titles">SUPERIOR</h5>
-            <input id="inputText" class="input-slider" type="text">
-            <p id="renderText"></p>
+            <input id="input-text" class="input-slider" type="text" placeholder="TOP TEXT">
         </div>
-
         <div>
             <h5 class="sub-titles">INFERIOR</h5>
-           <input id="inputBotton" class="input-slider" type="text">
-           <p id="bottonText"></p>
+           <input id="input-bottom" class="input-slider" type="text" placeholder="BOTTOM TEXT">
         </div>
 
         <div>
@@ -177,6 +172,8 @@
                 </select>                                
             </div>  
         </div>
+        <button class="btn"> Restablecer Filtros</button>
+        <button id="btnDownload" type="button" class="btn-download">Descargar Meme</button>
     </aside>
 
     <script src="./script.js"></script>

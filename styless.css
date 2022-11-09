@@ -71,6 +71,11 @@ body {
     color: aliceblue;
 }
 
+.text-container{
+    width: 500px;
+    height: 80px;
+    padding: 20px;
+}
 .canva-container {
     display: flex;
     flex-grow: 1;
@@ -82,12 +87,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
     background-color: rgb(61, 60, 60);
 }
 
-
-.light-theme .header-container {
+.light-theme .header-container{
     background-color: aliceblue;
     color: black;
 }
