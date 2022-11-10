@@ -24,9 +24,9 @@
     
     <div class="canva-container">
         <main class="editor-container">
-            <div class="text-container"><p class="canva-editor" id="top-text">TOP TEXT</p></div>
+            <div class="text-container" id="top-text-container"><p class="canva-editor" id="top-text">TOP TEXT</p></div>
             <div class="img-meme" id="img-meme"></div>
-            <div class="text-container"><p class="canva-editor" id="bottom-text">BOTTOM TEXT</p></div>
+            <div class="text-container" id="bottom-text-container"><p class="canva-editor" id="bottom-text">BOTTOM TEXT</p></div>
         </main>
     </div>
     <aside id="section-image" class="aside-filter">
@@ -53,26 +53,26 @@
                 </div>           
         </div>    
         
-                <div class="filters">
+        <div class="filters">
                     <h5 class="sub-titles">FILTROS</h5>
                     <div class="filter-option">
-                        <label for="brightness-slider" class="name-filter"> BRILLO</label>
-                        <input class="input-slider algo" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="brightness-slider">BRILLO</label>
+                        <input id="brightness-slider" class="input-slider algo" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option"> 
-                        <label  for="opacity-slider" class="name-filter">OPACIDAD</label>
+                        <label for="opacity-slider">OPACIDAD</label>
+                        <input id="opacity" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                    </div>
+
+                    <div class="filter-option">
+                        <label for="contrast-slider">CONTRASTE</label>
                         <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label for="contrast-slider" class="name-filter"> CONTRASTE</label>
-                        <input class="input-slider" type ="range" min="100%" max="1000%" value="100%" step="1%"></input>
-                    </div>
-
-                    <div class="filter-option">
                         <label for="blur-slider" class="name-filter"> DESENFOQUE</label>
-                        <input class="input-slider" type ="range" min="0px" max="10px" value="0px" step="0.1px"></input>
+                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
@@ -91,8 +91,8 @@
                     </div>
 
                     <div class="filter-option">
-                        <label>SATURADO </label>
-                        <input type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label>SATURADO</label>
+                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
@@ -100,9 +100,9 @@
                          <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
                  </div> 
+                 
         </div>
-        <button class="btn"> Restablecer Filtros</button>
-        <button id="btnDownload" type="button" class="btn-download">Descargar Meme</button>
+        
     </aside>
     <aside id="section-text" class="aside-filter">
         <h2 class="title-sections">TEXTO</h2>
@@ -134,17 +134,13 @@
         </div>
 
         <div>
-            <div class="incolor">
             <h5 class="sub-titles">COLOR</h5>
             <div class="btn-color">
-            <input type="color" id="incolor" value="#000000" aria-label="color de texto">
+            <input type="color" id="color-text" value="#000000" aria-label="color de texto">
         </div>
-      
             <h5 class="sub-titles">FONDO</h5>
-            <input type="color" value="#FFFFFF">
+            <input type="color" value="#FFFFFF" id="background-text">
             <input type="checkbox">Fondo Transparente</input>
-        
-
         <div>
             <h5 class="sub-titles">CONTORNO</h5>
             <button class="btn">Ninguno</button>
