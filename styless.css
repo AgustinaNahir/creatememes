@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
@@ -37,6 +37,7 @@ body {
     color: aliceblue;
     background-color: rgb(34, 33, 33);
     font-size: medium;
+    
 }
 
 .btn-download{
@@ -54,12 +55,17 @@ body {
     border-radius: 5px;
 }
 
+.btn-download:hover{
+    background-color: rgb(93, 224, 93);
+}
+
 .img-meme{
     width: 500px;
     height: 500px;
     background-color: rgb(34, 33, 33);
     display: flex;
     align-items: center;
+    background-size: 500px 500px;
 }
 
 .canva-editor{
@@ -67,12 +73,19 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     color: aliceblue;
-    
+    justify-content: center;
+    padding: 16px 8px ;
+}
+
+.text-container{
+    width: 500px;
+    height: 80px;
+    align-items: center;
 }
 
 .canva-container {
     display: flex;
-    flex-grow: 1;
+    height: 100%;
 }
 
 .editor-container{
@@ -81,13 +94,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
     background-color: rgb(61, 60, 60);
-
 }
 
-
-.light-theme .header-container {
+.light-theme .header-container{
     background-color: aliceblue;
     color: black;
 }
@@ -107,13 +117,12 @@ body {
 }
 
 .aside-filter{
-    width: 260px;
-    height: 100%;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 30px 15px;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     background-color: rgb(34, 33, 33);
@@ -124,14 +133,30 @@ body {
     display: none;
 }
 
-@media (max-width: 820px){
+.sub-titles{
+  padding: 10px 0 10px 0;
+}
+
+.filter-option{
+    margin: 10px 0;
+}
+
+.input-slider{
+    width: 90%;
+}
+
+
+@media (max-width: 900px){
 
    .header-container{
     width: 100%;
     position: relative;
    } 
 
-  .aside-filter{
+   .canva-container{
+    width: 100%;
+   }
+    .aside-filter{
     position: relative;
     width: 100%;
   }

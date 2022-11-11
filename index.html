@@ -8,12 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
-    integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
-    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Editor de Memes</title>
 </head>
 <body>
@@ -28,23 +24,22 @@
     
     <div class="canva-container">
         <main class="editor-container">
-            <p class="canva-editor">TOP TEXT</p>
+            <div class="text-container" id="top-text-container"><p class="canva-editor" id="top-text">TOP TEXT</p></div>
             <div class="img-meme" id="img-meme"></div>
-            <p class="canva-editor">BOTTOM TEXT</p>
-            <button id="btn-download" type="button" class="btn-download">Descargar Meme</button>
+            <div class="text-container" id="bottom-text-container"><p class="canva-editor" id="bottom-text">BOTTOM TEXT</p></div>
         </main>
     </div>
     <aside id="section-image" class="aside-filter">
         <h2 class="title-sections">IMAGEN</h2>
         <div>
-            <h5>URL</h5>
+            <h5 class="sub-titles">URL</h5>
             <input type="text" id="inputUrl"/>
         </div>
-        <div class="section-background">
-                <div class="background">
-                    <h5>FONDO</h5>
-                    <input type="color" value="#e693ff">
-                </div>
+        <div>
+            <div>
+                 <h5 class="sub-titles">FONDO</h5>
+                <input type="color" value="#e693ff">
+            </div>
                 <div class="row form-group desplegable">                        
                         <label class="col-12 pl-0"></label>
                         <select class="form-control col-12">
@@ -58,74 +53,70 @@
                 </div>           
         </div>    
         
-                <div class="filters">
-                    <h5>FILTROS</h5>
+        <div class="filters">
+                    <h5 class="sub-titles">FILTROS</h5>
                     <div class="filter-option">
-                        <label for="brightness-slider" class="name-filter"> BRILLO</label>
-                        <input class="input-slider algo" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="brightness-slider">BRILLO</label>
+                        <input id="brightness-slider" class="input-slider algo" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option"> 
-                        <label  for="opacity-slider" class="name-filter">OPACIDAD</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="opacity-slider">OPACIDAD</label>
+                        <input id="opacity-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label for="contrast-slider" class="name-filter"> CONTRASTE</label>
-                        <input class="input-slider" type ="range" min="100%" max="1000%" value="100%" step="1%"></input>
+                        <label for="contrast-slider">CONTRASTE</label>
+                        <input id="contrast-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label for="blur-slider" class="name-filter"> DESENFOQUE</label>
-                        <input class="input-slider" type ="range" min="0px" max="10px" value="0px" step="0.1px"></input>
+                        <label for="blur-slider" class="name-filter">DESENFOQUE</label>
+                        <input id="blur-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> ESCALA DE GRISES</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="grayscale-slider" class="name-filter">ESCALA DE GRISES</label>
+                        <input id="grayscale-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> SEPIA </label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="sepia-slider" class="name-filter">SEPIA</label>
+                        <input id="sepia-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> HUE </label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="hue-rotate-slider" class="name-filter">HUE</label>
+                        <input id="hue-rotate-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> SATURADO </label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="saturate-slider" class="name-filter">SATURADO</label>
+                        <input id="saturate-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                          <label for="opacity-slider" class="name-filter"> NEGATIVO </label>
-                         <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                          <label for="invert-slider" class="name-filter">NEGATIVO</label>
+                         <input id="invert-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
                  </div> 
-            
-       
-            <button class="btn"> Restablecer Filtros</button>
+                 <button class="btn" id="reset-filter">Restablecer Filtros</button>
         </div>
+        
     </aside>
     <aside id="section-text" class="aside-filter">
         <h2 class="title-sections">TEXTO</h2>
         <div>
-            <h5> SUPERIOR</h5>
-            <input id="inputText" class="input-slider" type="text">
-            <p id="renderText"></p>
+            <h5 class="sub-titles">SUPERIOR</h5>
+            <input id="input-text" class="input-slider" type="text" placeholder="TOP TEXT">
+        </div>
+        <div>
+            <h5 class="sub-titles">INFERIOR</h5>
+           <input id="input-bottom" class="input-slider" type="text" placeholder="BOTTOM TEXT">
         </div>
 
         <div>
-            <h5>INFERIOR</h5>
-           <input id="inputBotton" class="input-slider" type="text">
-           <p id="bottonText"></p>
-        </div>
-
-        <div>
-            <h5>FUENTE</h5>
+            <h5 class="sub-titles">FUENTE</h5>
             <div class="row form-group">                        
                 <label class="col-12 pl-0"></label>
                 <select class="form-control col-12">
@@ -142,33 +133,31 @@
             </div>  
         </div>
 
-        <div class="color-text">
-            <div class="incolor">
-            <h5 class="tittle-items">COLOR</h5>
+        <div>
+            <h5 class="sub-titles">COLOR</h5>
             <div class="btn-color">
-            <input type="color" id="incolor" value="#000000" aria-label="color de texto">
+            <input type="color" id="color-text" value="#000000" aria-label="color de texto">
         </div>
-      
-            <h5>FONDO</h5>
-            <input type="color" value="#FFFFFF">
-            <input type="checkbox">Fondo Transparente</input>
-        
-
         <div>
-            <h5>CONTORNO</h5>
-            <button class="button-outline">Ninguno</button>
-            <button class="button-outline">Claro</button>
-            <button class="button-outline">Oscuro</button>
+            <h5 class="sub-titles">FONDO</h5>
+            <input type="color" value="#FFFFFF" id="background-text">
+            <input id="transparent-box" type="checkbox">Transparente</input>
+        </div>
+        <div>
+            <h5 class="sub-titles">CONTORNO</h5>
+            <button class="btn">Ninguno</button>
+            <button class="btn">Claro</button>
+            <button class="btn">Oscuro</button>
         </div>
 
         
         <div>
-            <h5>ESPACIADO</h5>
+            <h5 class="sub-titles">ESPACIADO</h5>
         <input class="space" type="number" value="35">
         </div>
 
         <div>
-            <h5>INTERLINEADO</h5>
+            <h5 class="sub-titles">INTERLINEADO</h5>
             <div class="row form-group">                        
                 <label  class="col-12 pl-0 "></label>
                 <select class="form-control col-12 space">
@@ -181,6 +170,7 @@
                 </select>                                
             </div>  
         </div>
+        <button id="btnDownload" type="button" class="btn-download">Descargar Meme</button>
     </aside>
 
     <script src="./script.js"></script>
