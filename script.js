@@ -32,6 +32,7 @@ btnTxt.addEventListener("click", ()=>{
 })
 
 /* input textos */
+
 let topText = document.getElementById('top-text');
 let bottomText = document.getElementById('bottom-text');
 let inputText = document.getElementById('input-text');
@@ -67,24 +68,18 @@ const downloadMeme = () => {
 
 btnDownload.addEventListener("click", downloadMeme);
 
-/* filtros de imagen*/
-
-let brightnessImg = document.getElementById("brightness");
-let opacityImg = document.getElementById("opacity");
-
-
 /*filtros de texto*/
 let colorText = document.getElementById("color-text");
 
 colorText.addEventListener('blur', (event) =>{
   let colorText = event.target.value;
   topText.style.color = colorText;
-})
+});
 
 colorText.addEventListener('blur', (event) =>{
   let colorText = event.target.value;
   bottomText.style.color = colorText;
-})
+});
 
 let topTextContainer = document.getElementById("top-text-container");
 let bottomTextContainer = document.getElementById("bottom-text-container");
@@ -99,3 +94,54 @@ backgroundText.addEventListener('blur', (event) => {
   let backgroundColorText = event.target.value;
   bottomTextContainer.style.backgroundColor = backgroundColorText;
 });
+
+/* filtros de imagen*/
+
+let brightnessImg = document.getElementById("brightness-slider");
+let opacityImg = document.getElementById("opacity-slider");
+/*let contrastImg = document.getElementById("contrast-slider");
+let blurImg = document.getElementById("blur-slider");
+let grayscaleImg = document.getElementById("grayscale-slider");
+let sepiaImg = document.getElementById("sepia-slider");
+let hueRotateImg = document.getElementById("hue-rotate-slider");
+let saturateImg = document.getElementById("saturate-slider");
+let invertImg = document.getElementById("invert-slider");*/
+
+const actualizarFiltros = () => {
+  imageContainer.style.filter = `brightness(${brightnessImg.value}) opacity(${opacityImg.value})`;
+};
+
+brightnessImg.addEventListener("change", actualizarFiltros);
+opacityImg.addEventListener("change", actualizarFiltros);
+/*contrastImg.addEventListener("change", actualizarFiltros);
+blurImg.addEventListener("change", actualizarFiltros);
+grayscaleImg.addEventListener("change", actualizarFiltros);
+sepiaImg.addEventListener("change", actualizarFiltros);
+hueRotateImg.addEventListener("change", actualizarFiltros);
+saturateImg.addEventListener("change", actualizarFiltros);
+invertImg.addEventListener("change", actualizarFiltros);*/
+
+
+let resertFilter = document.getElementById("reset-filter");
+
+const resetarFiltros = () => {
+  brightnessImg.value = 100;
+  opacityImg.value = 100;
+
+  actualizarFiltros();
+};
+
+resertFilter.addEventListener('click', resetarFiltros);
+
+
+/* fondo transparente, no funciona*/
+let transparentBox = document.getElementById('transparent-box')
+const transparentBackground = () => {
+  let transparent = `${(imageContainer.style.backgroundColor = "#ffffff00")}`
+  if (transparentBox.checked){
+    topTextContainer.style.backgroundColor = transparent;
+    bottomTextContainer.style.backgroundColor = transparent;
+  } else {
+  
+  }
+}

@@ -117,7 +117,7 @@ body {
 }
 
 .aside-filter{
-    width: 361px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -144,6 +144,7 @@ body {
 .input-slider{
     width: 90%;
 }
+
 
 @media (max-width: 900px){
 

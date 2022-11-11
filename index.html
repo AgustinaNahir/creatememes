@@ -62,45 +62,45 @@
 
                     <div class="filter-option"> 
                         <label for="opacity-slider">OPACIDAD</label>
-                        <input id="opacity" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <input id="opacity-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
                         <label for="contrast-slider">CONTRASTE</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <input id="contrast-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label for="blur-slider" class="name-filter"> DESENFOQUE</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="blur-slider" class="name-filter">DESENFOQUE</label>
+                        <input id="blur-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter"> ESCALA DE GRISES</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="grayscale-slider" class="name-filter">ESCALA DE GRISES</label>
+                        <input id="grayscale-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label class="name-filter">SEPIA</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="sepia-slider" class="name-filter">SEPIA</label>
+                        <input id="sepia-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label>HUE</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="hue-rotate-slider" class="name-filter">HUE</label>
+                        <input id="hue-rotate-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                        <label>SATURADO</label>
-                        <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                        <label for="saturate-slider" class="name-filter">SATURADO</label>
+                        <input id="saturate-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
 
                     <div class="filter-option">
-                          <label for="opacity-slider" class="name-filter">NEGATIVO</label>
-                         <input class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
+                          <label for="invert-slider" class="name-filter">NEGATIVO</label>
+                         <input id="invert-slider" class="input-slider" type ="range" min="0" max="1" value="1" step="0.1"></input>
                     </div>
                  </div> 
-                 
+                 <button class="btn" id="reset-filter">Restablecer Filtros</button>
         </div>
         
     </aside>
@@ -138,9 +138,11 @@
             <div class="btn-color">
             <input type="color" id="color-text" value="#000000" aria-label="color de texto">
         </div>
+        <div>
             <h5 class="sub-titles">FONDO</h5>
             <input type="color" value="#FFFFFF" id="background-text">
-            <input type="checkbox">Fondo Transparente</input>
+            <input id="transparent-box" type="checkbox">Transparente</input>
+        </div>
         <div>
             <h5 class="sub-titles">CONTORNO</h5>
             <button class="btn">Ninguno</button>
@@ -168,7 +170,6 @@
                 </select>                                
             </div>  
         </div>
-        <button class="btn"> Restablecer Filtros</button>
         <button id="btnDownload" type="button" class="btn-download">Descargar Meme</button>
     </aside>
 
